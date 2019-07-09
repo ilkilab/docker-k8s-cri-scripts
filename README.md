@@ -23,4 +23,4 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/install_docker/master/i
 Ubuntu:
 
 	- Containerd:
-bash <(curl -s https://raw.githubusercontent.com/ilkilab/install_docker/master/install_latest_centos.sh)
+bash <(curl -s https://raw.githubusercontent.com/ilkilab/install_docker/master/containerd-kubeadm-ubuntu-latest.sh)
