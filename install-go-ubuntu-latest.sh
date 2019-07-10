@@ -3,5 +3,6 @@ sudo apt-get update
 sudo apt-get install golang-go
 
 echo 'export GOPATH=$HOME/go' >> ~/.bash_profile
+unset GOPATH
 source ~/.bash_profile
 
