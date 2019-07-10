@@ -1,3 +1,4 @@
+#!/bin/bash
 modprobe overlay
 modprobe br_netfilter
 
