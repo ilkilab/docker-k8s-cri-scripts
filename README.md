@@ -41,4 +41,5 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/
 # Install cfssl + cfssljson
 
 Install go first !
+
 bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-cfssl-cfssljson-latest.sh)
