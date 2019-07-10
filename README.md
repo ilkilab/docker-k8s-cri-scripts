@@ -22,5 +22,11 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/
 
 Ubuntu:
 
-	- Containerd:
 bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/containerd-kubeadm-ubuntu-latest.sh)
+
+
+
+# Install containerd
+
+Ubuntu:
+bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-containerd-ubuntu-latest.sh)
