@@ -43,3 +43,10 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/
 Install go first !
 
 bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-cfssl-cfssljson-latest.sh)
+
+
+# Install kubectl
+
+Ubuntu
+
+bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-kubectl-ubuntu-latest.sh)
