@@ -29,4 +29,10 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/
 # Install containerd
 
 Ubuntu:
+
 bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-containerd-ubuntu-latest.sh)
+
+
+# Install go
+
+bash <(curl -s https://raw.githubusercontent.com/ilkilab/docker-k8s-cri-scripts/master/install-go-ubuntu-latest.sh)
