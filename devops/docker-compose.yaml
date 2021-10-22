@@ -1,0 +1,76 @@
+version: "3.9"
+
+services:
+  sonarqube:
+    image: sonarqube:community
+    depends_on:
+      - sonarbdd
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://sonarbdd:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
+    networks:
+      - devops-net
+
+
+  sonarbdd:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+    networks:
+      - devops-net
+
+
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://34.72.137.90'
+
+    ports:
+      - '80:80'
+#      - '443:443'
+#      - '22:22'
+    volumes:
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+    networks:
+      - devops-net
+
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "5000:5000"
+    networks:
+      - devops-net
+
+volumes:
+  jenkins_data: {}
+  gitlab_config: {}
+  gitlab_logs: {}
+  gitlab_data: {}
+  sonarqube_data: {}
+  sonarqube_extensions: {}
+  sonarqube_logs: {}
+  postgresql: {}
+  postgresql_data: {}
+
+networks:
+  devops-net:
+    driver: bridge
