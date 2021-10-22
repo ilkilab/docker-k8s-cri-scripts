@@ -36,7 +36,7 @@ services:
     restart: always
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://34.72.137.90'
+        external_url '${GITLAB_EXTERNAL_URL:-https://gitlab.local.lan}'
 
     ports:
       - '80:80'
