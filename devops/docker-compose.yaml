@@ -4,6 +4,8 @@ services:
   sonarqube:
     image: sonarqube:9.1.0-community
     restart: always
+    cpu_shares: 500
+    mem_limit: '2g'
     depends_on:
       - sonarbdd
     environment:
@@ -23,6 +25,8 @@ services:
   sonarbdd:
     image: postgres:12
     restart: always
+    cpu_shares: 500
+    mem_limit: '1g'
     environment:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
@@ -36,6 +40,7 @@ services:
   gitlab:
     image: 'gitlab/gitlab-ce:14.3.3-ce.0'
     restart: always
+    mem_limit: '4g'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url '${GITLAB_EXTERNAL_URL:-https://gitlab.local.lan}'
