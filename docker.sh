@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script install Docker without Containerd. So it s a Full Docker
 sudo apt-get update
 sudo apt-get install -yqq apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
